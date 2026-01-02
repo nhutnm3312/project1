@@ -58,7 +58,7 @@ jobs:
         context: .
         push: true
         tags: |
-          ${{ secrets.DOCKER_USERNAME }}/careermate:latest
-          ${{ secrets.DOCKER_USERNAME }}/careermate:${{ github.sha }}
+          nhutnm/careermate:latest
+          nhutnm/careermate:${{ github.sha }}
         cache-from: type=gha
         cache-to: type=gha,mode=max
