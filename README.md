@@ -1,65 +1,48 @@
 # CareerMate API
 
-Your AI-Powered Job Companion backend service.
+AI-Powered Job Companion backend service.
 
-## Project Structure
+## 🚀 Quick Start
 
-```
-careermate/
-├── app.py                 # Flask application
-├── test_app.py           # Unit tests
-├── requirements.txt      # Python dependencies
-├── Dockerfile           # Docker configuration
-├── .github/
-│   └── workflows/
-│       └── ci-cd.yml    # GitHub Actions workflow
-└── README.md            # This file
-```
-
-## Local Development
-
-1. Install dependencies:
 ```bash
+# Install dependencies
 pip install -r requirements.txt
-```
 
-2. Run the application:
-```bash
+# Run API server
 python app.py
-```
 
-3. Run tests:
-```bash
+# Run tests
 pytest test_app.py -v
 ```
 
-## API Endpoints
+## 📡 API Endpoints
 
 - `GET /` - Welcome message
-- `GET /health` - Health check endpoint
+- `GET /health` - Health check
 
-## Docker Deployment
+## 🐳 Docker Deployment
 
-1. Build Docker image:
 ```bash
+# Build image
 docker build -t careermate .
-```
 
-2. Run container:
-```bash
+# Run container
 docker run -p 5000:5000 careermate
 ```
 
-## CI/CD Pipeline
+## 🔄 CI/CD Pipeline
 
-The project includes automated CI/CD pipeline using GitHub Actions:
+- **Test Job**: Runs unit tests with coverage
+- **Build Job**: Creates Docker image artifact
+- **Triggers**: Push to main/develop branches
 
-- **Continuous Integration**: Runs tests on every push and pull request
-- **Continuous Deployment**: Builds and pushes Docker image on main branch merge
+## 📊 Project Structure
 
-### Required Secrets
-
-Configure these secrets in your GitHub repository:
-
-- `DOCKER_USERNAME` - Docker Hub username
-- `DOCKER_PASSWORD` - Docker Hub access token
+```
+careermate/
+├── app.py              # Flask API
+├── test_app.py          # Unit tests
+├── requirements.txt     # Dependencies
+├── Dockerfile          # Container config
+└── .github/workflows/ # CI/CD pipeline
+```

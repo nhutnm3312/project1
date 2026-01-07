@@ -5,8 +5,8 @@ import time
 app = Flask(__name__)
 
 @app.route('/health', methods=['GET'])
-def health_check():
-    """Health check endpoint returning system status."""
+def health():
+    """Health check endpoint."""
     return jsonify({
         'status': 'healthy',
         'timestamp': time.time(),

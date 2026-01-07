@@ -4,13 +4,13 @@ from app import app
 
 @pytest.fixture
 def client():
-    """Create test client."""
+    """Test client fixture."""
     app.config['TESTING'] = True
     with app.test_client() as client:
         yield client
 
 def test_health_endpoint(client):
-    """Test /health endpoint."""
+    """Test health endpoint."""
     response = client.get('/health')
     assert response.status_code == 200
     
@@ -21,7 +21,7 @@ def test_health_endpoint(client):
     assert data['version'] == '1.0.0'
 
 def test_index_endpoint(client):
-    """Test / endpoint."""
+    """Test index endpoint."""
     response = client.get('/')
     assert response.status_code == 200
     
@@ -29,12 +29,12 @@ def test_index_endpoint(client):
     assert 'CareerMate API' in data['message']
     assert data['version'] == '1.0.0'
 
-def test_health_endpoint_response_time(client):
-    """Test health endpoint response time."""
+def test_response_time(client):
+    """Test response time."""
     import time
     start_time = time.time()
     response = client.get('/health')
     end_time = time.time()
     
     assert response.status_code == 200
-    assert (end_time - start_time) < 1.0  # Should respond within 1 second
+    assert (end_time - start_time) < 1.0
